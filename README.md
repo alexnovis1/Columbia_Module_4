@@ -18,7 +18,7 @@ The python script reads in a timestamp csv file filled with four different inves
 
 ## Resources
 
-The code will import the following libraries and dependencies: Pandas, Numpy, Pathlib, and Matplotlib.
+The script uses Python 3.7. The code will import the following libraries and dependencies: Pandas, Numpy, Pathlib, and Matplotlib.
 
 ```python
 import pandas as pd
@@ -34,3 +34,19 @@ from pathlib import Path
 [For more infomration on Pathlib](https://docs.python.org/3/library/pathlib.html)
 
 [For more information on Matplotlib](https://matplotlib.org/)
+
+---
+
+## Usage
+
+After reading the csv file, using `pd.read_csv()`, the script calculates the daily returns by using the `pct_change()` function and then `dropna` to find teh daily returns of the four funds and S&P 500. 
+
+```python 
+whale_navs_daily_returns = whale_navs.pct_change().dropna()
+```
+
+The script goes one step further, by isolating the daily returns by each fund and S&P 500 to have more control over visualization tactics. Using the Soros Management Fund as an example: 
+
+```python
+daily_return_soros = whale_navs.iloc[:,0].pct_change().dropna()
+```
