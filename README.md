@@ -20,10 +20,10 @@ The python script reads in a timestamp csv file filled with four different inves
 
 The code will import the following libraries and dependencies: Pandas, Numpy, Pathlib, and Matplotlib.
 
-'''python
+```python
 import pandas as pd
 import numpy as np
 from pathlib import Path 
 %matplotlib inline
-'''
+```
 
