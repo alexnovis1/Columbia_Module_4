@@ -50,3 +50,7 @@ The script goes one step further, by isolating the daily returns by each fund an
 ```python
 daily_return_soros = whale_navs.iloc[:,0].pct_change().dropna()
 ```
+
+Now to see the results in a visual view, the script uses the the `.plot()` to show a line graph.
+
+![Daily Returns Graph](Graphs/daily_returns.png)
