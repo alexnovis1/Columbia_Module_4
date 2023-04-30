@@ -27,3 +27,10 @@ from pathlib import Path
 %matplotlib inline
 ```
 
+[For more information on Pandas](https://pandas.pydata.org/)
+
+[For more information on Numpy](https://numpy.org/)
+
+[For more infomration on Pathlib](https://docs.python.org/3/library/pathlib.html)
+
+[For more information on Matplotlib](https://matplotlib.org/)
