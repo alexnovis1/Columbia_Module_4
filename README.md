@@ -10,9 +10,9 @@ The python script reads in a timestamp csv file filled with four different inves
 
 ## Folders 
 
-[Example CSV File]("Columbia_Module_4/Resources/whale_navs.csv")
+[Example CSV File](Columbia_Module_4/Resources/whale_navs.csv)
 
-[Risk Return Analysis Python Script]("Columbia_Module_4/risk_return_analysis.ipynb")
+[Risk Return Analysis Python Script](Columbia_Module_4/risk_return_analysis.ipynb)
 
 ---
 
@@ -20,10 +20,10 @@ The python script reads in a timestamp csv file filled with four different inves
 
 The code will import the following libraries and dependencies: Pandas, Numpy, Pathlib, and Matplotlib.
 
-"""python
+'''python
 import pandas as pd
 import numpy as np
 from pathlib import Path 
 %matplotlib inline
-"""
+'''
 
