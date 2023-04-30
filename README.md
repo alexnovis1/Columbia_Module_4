@@ -51,6 +51,16 @@ The script goes one step further, by isolating the daily returns by each fund an
 daily_return_soros = whale_navs.iloc[:,0].pct_change().dropna()
 ```
 
-Now to see the results in a visual view, the script uses the the `.plot()` to show a line graph.
+ The script uses the the `.plot()` to show a line graph of the daily returns. This allows a visual representation of the data. 
 
 ![Daily Returns Graph](Graphs/daily_returns.png)
+
+Next, using the `cumprod()` function, the script calculates the cumulative returns during the date range specified in the CSV file. 
+
+```python
+cumulative_returns = (1 + whale_navs_daily_returns).cumprod()
+```
+
+Visualizing the cumulative returns allows for an easier analysis. 
+
+![Cumulative Returns Graph](Graphs/cumulative_returns.png)
