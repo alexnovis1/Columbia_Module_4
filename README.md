@@ -64,3 +64,54 @@ cumulative_returns = (1 + whale_navs_daily_returns).cumprod()
 Visualizing the cumulative returns allows for an easier analysis. 
 
 ![Cumulative Returns Graph](Graphs/cumulative_returns.png)
+
+We can analyze the volatility by calculating the standard deviation. The `std()` is perfect for this. Sorting the values will allow us to see the descending to ascending view of volatility.
+
+```python 
+whale_navs_std = whale_navs_daily_returns.std()
+whale_navs_std.sort_values()
+```
+
+Next, we can use the Sharpe Ratio to determine the risk-adjusted returns based on the four funds. To do this, the script takes the annual average return. 252 is used as a constant for the amount of potential tradings days in a year. 
+
+```python
+whale_navs_avg = whale_navs_daily_returns.mean() * 252
+```
+
+> A plot of the results of the Sharpe Ratio calculation can be found below: 
+
+![Sharpe Ratio Plot](Graphs/sharpe_ratio.png)
+
+Lastly, the script looks to further look at the various funds by calculating the beta between two funds. 
+
+> Side Note: The script uses Soros Fund Management LLC and Paulson & CO Inc. as a comparison. 
+
+Calculating the beta in this script includes looking at the variance on a 60 day period for the S&P 500. 
+
+```python 
+var_sp_500 = daily_return_sp500.rolling(window=60).var()
+```
+
+Next, we can calculate the co-variance of our chosen fund. In this example, this will be the Soros Fund Management LLC. 
+
+> Side Note: We are finding the co-variance in relation to our benchmark index, the S&P 500. Dividing this by the variance of the S&P 500 will give us the beta ratio. 
+
+```python
+soros_cov = whale_navs_daily_returns['SOROS FUND MANAGEMENT LLC'].cov(whale_navs_daily_returns["S&P 500"])
+soros_beta = soros_cov / var_sp_500
+```
+
+Doing the same steps with the other fund, Paulson & Co Inc., we can visualize the beta outputs with the graph shown below. 
+
+![Beta Graph](Graphs/beta.png)
+
+---
+
+## Contributors: 
+
+Alex Novis 
+
+Columbia Fintech Bootcamp
+
+
+
